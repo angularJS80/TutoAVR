@@ -66,15 +66,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void procSetting(){
-            otherMoveIintent = MakeIntent(Main2Activity.class);
 
+            HashMap paramPap = new HashMap();
+                paramPap.put("username","아무개");
+                paramPap.put("userage","3");
+            otherMoveIintent = MakeIntent(paramPap,Main2Activity.class);
         }
 
         // 버튼들에게 수신기를 달아준다.
         private void settingBtn() {
             // 커스텀 함수를 수행하여 버튼에 대한 수신기를 달아준다.
             MakeBtnListener(R.id.button, buttonClickListener); // 여기서 R.id.button 중 button 은 팔레트에서 레이아웃 작성시 자동으로 설정된 버튼의 id
-
             MakeBtnListener(R.id.otherWindow, otherWindowClickListener);
             MakeBtnListener(R.id.addRowBtn, addRowBtnClickListener);
         }
@@ -120,13 +122,11 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    public Intent MakeIntent(Class toContextClass){
+
+    public Intent MakeIntent(HashMap paramMap,Class toContextClass){
         Intent rtnIntent = new Intent(getApplicationContext(),toContextClass);
         rtnIntent.putExtra("fromActivity","Main2Activity");
-        HashMap paramPap = new HashMap();
-        paramPap.put("username","아무개");
-        paramPap.put("userage","3");
-        rtnIntent.putExtra("paramMap",paramPap);
+        rtnIntent.putExtra("paramMap",paramMap);
         return rtnIntent;
     }
 
