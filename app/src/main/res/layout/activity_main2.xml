@@ -6,4 +6,71 @@
     android:layout_height="match_parent"
     tools:context="com.example.yongbeom.myapplication.Main2Activity">
 
+    <Button
+        android:id="@+id/btn_ext_layout_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="확장레이아웃알림"
+        app:layout_constraintEnd_toStartOf="@+id/btn_update_noti"
+        app:layout_constraintStart_toEndOf="@+id/btn_basic_noti"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_basic_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="기본알림"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_update_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="업데이트알림"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_spec_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="특수알림"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_loding_noti"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_noti" />
+
+    <Button
+        android:id="@+id/btn_loding_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="로딩알림"
+        app:layout_constraintStart_toEndOf="@+id/btn_head_noti"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ext_layout_noti" />
+
+    <Button
+        android:id="@+id/btn_head_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="해드업알림"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_basic_noti" />
 </android.support.constraint.ConstraintLayout>
