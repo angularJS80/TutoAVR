@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TutoAVR</string>
     <string name="title_activity_ble2">Ble2Activity</string>
+    <string name="title_activity_location">LocationActivity</string>
 </resources>

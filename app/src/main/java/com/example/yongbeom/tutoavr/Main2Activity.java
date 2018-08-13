@@ -164,8 +164,8 @@ public class Main2Activity extends AppCompatActivity {
     protected void lodingBarNoti() {
         NotificationCompat.Builder mBuilder = notiBuilder("로딩 알림", "로딩 내용");
         threadNumber++;
-        //notiThread(mBuilder);
-        notiNonThread(mBuilder, threadNumber);
+        notiThread(mBuilder);
+        //notiNonThread(mBuilder, threadNumber);
 
     }
 
@@ -220,6 +220,7 @@ public class Main2Activity extends AppCompatActivity {
                     }
                 }
         );
+       t1.start();
     }
 
 

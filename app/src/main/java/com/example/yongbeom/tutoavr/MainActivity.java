@@ -19,12 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     Intent otherMoveIintent ; // 안드로이드에서 지원하는 인텐트를 이용해 먼가 지시 할것이다.
+
+    Intent moveLocationIntent;
     ArrayAdapter<String> listAdapter; // 안드로이드에서 지원하는 화면과 변수간에 중간역활을 하는 어뎁터를 변수 정의
 
     ArrayList arrayList = new ArrayList(); // java 배열리스트 정의 - > 배열변수를 이용하여 값을 적재 할것이다
     View.OnClickListener buttonClickListener;
     View.OnClickListener addRowBtnClickListener;
     View.OnClickListener otherWindowClickListener;
+    View.OnClickListener locationWindowClickListener;
+
 
     @Override //이 엑티비티가 시작되면 어떤일을 시작할지 정의 한다.
     public void startActivity(Intent intent) {
@@ -71,13 +75,15 @@ public class MainActivity extends AppCompatActivity {
                 paramPap.put("username","아무개");
                 paramPap.put("userage","3");
             otherMoveIintent = MakeIntent(paramPap,Main2Activity.class);
+            moveLocationIntent = MakeIntent(paramPap,LocationActivity.class);
         }
 
         // 버튼들에게 수신기를 달아준다.
         private void settingBtn() {
             // 커스텀 함수를 수행하여 버튼에 대한 수신기를 달아준다.
             MakeBtnListener(R.id.button, buttonClickListener); // 여기서 R.id.button 중 button 은 팔레트에서 레이아웃 작성시 자동으로 설정된 버튼의 id
-            MakeBtnListener(R.id.otherWindow, otherWindowClickListener);
+            MakeBtnListener(R.id.moveLocation, otherWindowClickListener);
+            MakeBtnListener(R.id.moveLocation, locationWindowClickListener);
             MakeBtnListener(R.id.addRowBtn, addRowBtnClickListener);
         }
 
@@ -101,6 +107,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     MainActivity.super.startActivity(otherMoveIintent); // 인텐트를 인자로 하는것으로 먼가 범위 밖의 프로그램 수행이 예상된다.
+
+                }
+            };
+
+            locationWindowClickListener = new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.super.startActivity(moveLocationIntent); // 인텐트를 인자로 하는것으로 먼가 범위 밖의 프로그램 수행이 예상된다.
 
                 }
             };
